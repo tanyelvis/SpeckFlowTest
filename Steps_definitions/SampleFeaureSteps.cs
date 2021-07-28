@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 
 namespace SpecflowIntro.Steps_definitions
 {
@@ -37,6 +38,17 @@ namespace SpecflowIntro.Steps_definitions
                 throw new Exception("The value is different");
 
             }
+        }
+
+        [When(@"I fill all the mandatory details in form")]
+        public void WhenIFillAllTheMandatoryDetailsInForm(Table table)
+        {
+            //ScenarioContext.Current.Pending();
+            EmployeeDetails details  = table.CreateInstance<EmployeeDetails>();
+            Console.WriteLine(details.Age);
+            Console.WriteLine(details.Email);
+            Console.WriteLine(details.Name);
+            Console.WriteLine(details.Phone);
         }
 
     }
