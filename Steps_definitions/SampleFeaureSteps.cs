@@ -43,12 +43,22 @@ namespace SpecflowIntro.Steps_definitions
         [When(@"I fill all the mandatory details in form")]
         public void WhenIFillAllTheMandatoryDetailsInForm(Table table)
         {
+            var details = table.CreateSet<EmployeeDetails>();
+            
             //ScenarioContext.Current.Pending();.....
-            EmployeeDetails details  = table.CreateInstance<EmployeeDetails>();
-            Console.WriteLine(details.Age);
-            Console.WriteLine(details.Email);
-            Console.WriteLine(details.Name);
-            Console.WriteLine(details.Phone);
+            foreach(EmployeeDetails emp in details)
+            {
+                Console.WriteLine("The details of Employee : " + emp.Name);
+                Console.WriteLine("***************************");
+                Console.WriteLine(emp.Age);
+                Console.WriteLine(emp.Email);
+                Console.WriteLine(emp.Name);
+                Console.WriteLine(emp.Phone);
+
+
+
+            }
+            
         }
 
     }
