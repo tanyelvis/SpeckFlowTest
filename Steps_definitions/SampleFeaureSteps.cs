@@ -40,6 +40,9 @@ namespace SpecflowIntro.Steps_definitions
             }
         }
 
+
+      
+
         [When(@"I fill all the mandatory details in form")]
         public void WhenIFillAllTheMandatoryDetailsInForm(Table table)
         {
@@ -51,15 +54,28 @@ namespace SpecflowIntro.Steps_definitions
                 Console.WriteLine("The details of Employee : " + emp.Name);
                 Console.WriteLine("***************************");
                 Console.WriteLine(emp.Age);
-                Console.WriteLine(emp.Email);
+               // Console.WriteLine(emp.Email);
                 Console.WriteLine(emp.Name);
                 Console.WriteLine(emp.Phone);
 
 
 
             }
+
+
             
         }
+
+        [When(@"I fill all the mandatory details in form (.*),(.*) and (.*)")]
+        public void WhenIFillAllTheMandatoryDetailsInFormAnd(string name, int age, Int64 Phone)
+        {
+            // ScenarioContext.Current.Pending();
+            Console.WriteLine("Name :" + name);
+            Console.WriteLine("Age :" + age);
+            Console.WriteLine("Phone number:" + Phone);
+        }
+
+
 
     }
 }

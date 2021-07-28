@@ -18,8 +18,20 @@ Scenario: Create a new employee with mandatary details
     |karthik| 28     | 8956741232| karthik@executeautomation.com |
 	|john| 20     | 1556741232| john@executeautomation.com |
 	|paul| 32    | 3556741232|paul@executeautomation.com |
-
-
     #And I clicked the save button
     #Then I should see all the details saved in my application and DB
+
+
+Scenario Outline: Create a new employee with mandatary details for different itterations
+    #Given I have opened my application.----
+    #Then I sholud see employee details page
+	When I fill all the mandatory details in form <Name>,<Age> and <Phone>
+    #And I clicked the save button
+    #Then I should see all the details saved in my application and DB
+Examples:  
+    |Name   |  Age   | Phone            |
+    |karthik| 28     | 8956741232       | 
+	|john| 20     | 1556741232          | 
+	|paul| 32    | 3556741232           |
+
 
