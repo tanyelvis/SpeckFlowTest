@@ -11,7 +11,7 @@ Scenario: Add two numbers
 
 
 Scenario: Create a new employee with mandatary details
-    #Given I have opened my application
+    #Given I have opened my application.----
     #Then I sholud see employee details page
 	When I fill all the mandatory details in form
     |Name   |  Age   | Phone     | Email                         |
